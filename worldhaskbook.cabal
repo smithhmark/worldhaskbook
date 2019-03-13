@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 21f14726afcaae3c7187095b64590bcc2c211b7807646dd4b32dbf6609e8af17
+-- hash: 0fb608251e02af67d7b19c92e89597298973fac05f15e10a6cba8212a6ebba01
 
 name:           worldhaskbook
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Locations
       Nav
   other-modules:
       Paths_worldhaskbook

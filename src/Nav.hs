@@ -4,12 +4,10 @@ module Nav where
 import qualified Data.Map as Map
 import Text.XML.HXT.Core
 import Text.HandsomeSoup
-import Data.Char (isSpace)
+import Data.Char (isSpace, toUpper)
+import qualified Locations as L
 
-twoLetterCodes = [
-        ("Afghanistan", "AF"),
-        ("Albania", "AL")
-        ]
+twoLetterCodes = map (\(n,l)-> (n, map toUpper l)) L.locations
 
 type CountryName = String
 type CC2 = String

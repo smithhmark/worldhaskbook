@@ -37,7 +37,7 @@ spec = do
     it "Shows Albania as AL" $ do
       Nav.findCC2 "Albania" `shouldBe` Just "AL"
     it "Shows Unitied States as US" $ do
-      Nav.findCC2 "United States" `shouldBe` Nothing
+      Nav.findCC2 "United States" `shouldBe` Just "US"
   describe "build cc2 mapping" $ do 
     it "parses html for the options box" $ do
       unsafePerformIO (Nav.parseCCMapping sampleHtml) `shouldBe` expectedMapping
