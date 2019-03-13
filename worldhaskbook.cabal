@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 70d67b25e46dc34bb238dcd26ad4eaef79085fd3c652280c2f27577d2407832b
+-- hash: 21f14726afcaae3c7187095b64590bcc2c211b7807646dd4b32dbf6609e8af17
 
 name:           worldhaskbook
 version:        0.1.0.0
@@ -34,8 +34,10 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      HandsomeSoup
+    , base >=4.7 && <5
     , containers
+    , hxt
   default-language: Haskell2010
 
 executable worldhaskbook-exe

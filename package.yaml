@@ -26,6 +26,8 @@ library:
   source-dirs: src
   dependencies:
   - containers
+  - HandsomeSoup
+  - hxt
 
 executables:
   worldhaskbook-exe:
