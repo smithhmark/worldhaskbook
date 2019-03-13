@@ -39,5 +39,7 @@ spec = do
     it "Shows Unitied States as US" $ do
       Nav.findCC2 "United States" `shouldBe` Just "US"
   describe "build cc2 mapping" $ do 
-    it "parses html for the options box" $ do
+    it "parses html for the codes in IO" $ do
       unsafePerformIO (Nav.parseCCMapping sampleHtml) `shouldBe` expectedMapping
+    it "parses html for the codes pure" $ do
+      Nav.parseCCMapping' sampleHtml `shouldBe` expectedMapping

@@ -33,3 +33,7 @@ parseCCMapping html = do
         codes <- runX $ doc >>> css "#search-place option" >>> (getAttrValue "data-place-code" &&& (deep getText))
         return $ cleanCCMapping codes
 
+parseCCMapping' :: String -> [(CountryName, LocationCode)]
+parseCCMapping' html = cleanCCMapping codes
+  where codes = runLA (hread  >>> extractor) html
+        extractor = css "#search-place option" >>> (getAttrValue "data-place-code" &&& (deep getText))
