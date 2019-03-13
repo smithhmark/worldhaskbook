@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 65285317b556855457b9bf4152f11be0fc26fc935fac195056b47ebc81190047
+
+name:           worldhaskbook
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/smithhmark/worldhaskbook#readme>
+homepage:       https://github.com/smithhmark/worldhaskbook#readme
+bug-reports:    https://github.com/smithhmark/worldhaskbook/issues
+author:         Mark Smith
+maintainer:     smith.h.mark@gmail.com
+copyright:      value
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/smithhmark/worldhaskbook
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_worldhaskbook
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable worldhaskbook-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_worldhaskbook
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , worldhaskbook
+  default-language: Haskell2010
+
+test-suite worldhaskbook-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_worldhaskbook
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , worldhaskbook
+  default-language: Haskell2010
