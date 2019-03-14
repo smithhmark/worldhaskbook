@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0fb608251e02af67d7b19c92e89597298973fac05f15e10a6cba8212a6ebba01
+-- hash: f895bbe7358c845fd7467adf0eabe4b1dc83eaa8b6eaf89843aa0e3132e2a8ee
 
 name:           worldhaskbook
 version:        0.1.0.0
@@ -30,6 +30,8 @@ library
       Lib
       Locations
       Nav
+      People
+      WFB
   other-modules:
       Paths_worldhaskbook
   hs-source-dirs:
@@ -39,6 +41,7 @@ library
     , base >=4.7 && <5
     , containers
     , hxt
+    , time
   default-language: Haskell2010
 
 executable worldhaskbook-exe
@@ -58,6 +61,8 @@ test-suite worldhaskbook-test
   main-is: Spec.hs
   other-modules:
       NavSpec
+      PeopleSpec
+      WFBSpec
       Paths_worldhaskbook
   hs-source-dirs:
       test

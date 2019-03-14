@@ -28,6 +28,7 @@ library:
   - containers
   - HandsomeSoup
   - hxt
+  - time
 
 executables:
   worldhaskbook-exe:
