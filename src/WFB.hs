@@ -13,15 +13,15 @@ data Portion = Portion { porLable :: String,
                }
 type BreakDown = [Portion]
 
-data DOI = DOI { doiMonth :: Int
-               , doiYear :: Int
-               } deriving (Show, Eq)
+data DOI = DOI { doiYear :: Int
+               , doiMonth :: Int
+               } deriving (Show, Eq, Ord)
 
 doiFromString :: String -> DOI
 doiFromString s = case md of
                        Nothing -> DOI 0 0
-                       Just d -> let (y, m, _) = toGregorian d
-                                 in DOI m (fromIntegral y)
+                       Just d -> doiFromDay d
     where md = parseTimeM True defaultTimeLocale "%B %Y" s :: Maybe Day
 
-
+doiFromDay d = DOI (fromIntegral y) m
+  where (y, m, _) = toGregorian d
