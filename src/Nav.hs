@@ -30,10 +30,12 @@ cleanCCMapping = map (\(c, n) -> (cleanCountryName n, c)) .
 parseCCMapping :: String -> IO [(CountryName, LocationCode)]
 parseCCMapping html = do
         let doc = parseHtml html
-        codes <- runX $ doc >>> css "#search-place option" >>> (getAttrValue "data-place-code" &&& (deep getText))
+        codes <- runX $ doc >>> css "#search-place option" >>> 
+          (getAttrValue "data-place-code" &&& deep getText)
         return $ cleanCCMapping codes
 
 parseCCMapping' :: String -> [(CountryName, LocationCode)]
 parseCCMapping' html = cleanCCMapping codes
   where codes = runLA (hread  >>> extractor) html
-        extractor = css "#search-place option" >>> (getAttrValue "data-place-code" &&& (deep getText))
+        extractor = css "#search-place option" >>> 
+          (getAttrValue "data-place-code" &&& deep getText)
