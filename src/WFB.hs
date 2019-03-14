@@ -3,6 +3,7 @@ module WFB where
 import Data.Time
 
 type FieldName = String
+type FieldGenerator a = HTML -> [(FieldName, Maybe a)]
 
 type HTML = String
 type Count = Int
